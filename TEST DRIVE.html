@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nocturne Booksellers - a midnight collection of strange and beautiful stories.">
+    <title>Nocturne Booksellers</title>
+    <link rel="icon" type="image/png" href="images/logo.png.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-loader" aria-hidden="true">
+        <span class="loader-mark">✦</span>
+        <span>Opening the stacks</span>
+    </div>
+
+    <header class="site-header">
+        <div class="header-top">
+            <a class="brand" href="#top" aria-label="Nocturne Booksellers home">
+                <img src="images/logo.png.png" alt="Nocturne Booksellers Logo">
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="#featured">Featured</a>
+                <a href="#staff-picks">Staff Picks</a>
+                <a href="#new-arrivals">New Arrivals</a>
+                <a href="#search">Search</a>
+            </nav>
+            <div class="borrow-status" aria-live="polite">
+                <span class="status-label">Your reading list</span>
+                <strong id="borrow-count">0 books borrowed</strong>
+            </div>
+        </div>
+        <div class="hero" id="top">
+            <p class="eyebrow">Est. 1897 · Open after dark</p>
+            <h1>Where stories linger<br><em>long after midnight.</em></h1>
+            <p class="hero-copy">A quiet corner for curious minds, haunted histories, and the books that find you at exactly the right hour.</p>
+            <a class="text-link" href="#featured">Explore the collection <span aria-hidden="true">↓</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="collection-section" id="featured">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Curated for the curious</p>
+                    <h2>Featured Books</h2>
+                </div>
+                <p class="section-note">Stories with a little more shadow in their pages.</p>
+            </div>
+            <div class="book-container" id="featured-books"></div>
+        </section>
+
+        <section class="collection-section alternate" id="staff-picks">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">The booksellers' desk</p>
+                    <h2>Staff Picks</h2>
+                </div>
+                <p class="section-note">Personal favourites, marked with a pencil in the margin.</p>
+            </div>
+            <div class="book-container compact" id="staff-books"></div>
+        </section>
+
+        <section class="collection-section" id="new-arrivals">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Fresh from the parcel</p>
+                    <h2>New Arrivals</h2>
+                </div>
+                <p class="section-note">Recently shelved and ready to disappear into.</p>
+            </div>
+            <div class="book-container compact" id="new-books"></div>
+        </section>
+
+        <section class="discovery-panel" aria-labelledby="discovery-title">
+            <div>
+                <p class="eyebrow">A small daily ritual</p>
+                <h2 id="discovery-title">Quote of the Day</h2>
+                <blockquote>“There is no friend as loyal as a book.”</blockquote>
+                <cite>— Ernest Hemingway</cite>
+            </div>
+            <div class="recommendation">
+                <p class="eyebrow">For your next chapter</p>
+                <h3>Reading recommendations</h3>
+                <p>Start with a vanished scholar, follow the ivy-covered corridor, and keep the alchemist's lamp burning.</p>
+                <a class="text-link" href="#featured">Find a story <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="about-section" id="about" aria-labelledby="about-title">
+            <div>
+                <p class="eyebrow">Behind the shelves</p>
+                <h2 id="about-title">Made by a reader<br><em>with many hats.</em></h2>
+            </div>
+            <div>
+                <p>I am Celeste A. Jones, the graphic designer, writer, and developer behind Nocturne Booksellers. This project is a small study in building a complete atmosphere from the logo and book art to the words, layout, and interactions.</p>
+                <p class="about-note">A personal showcase of creative direction and front-end craft.</p>
+            </div>
+        </section>
+
+        <section class="search-section" id="search">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">The complete catalogue</p>
+                    <h2>Search the stacks</h2>
+                </div>
+            </div>
+            <div class="catalogue-tools">
+                <label class="search-field">
+                    <span aria-hidden="true">⌕</span>
+                    <span class="sr-only">Search books</span>
+                    <input id="search-input" type="search" placeholder="Search by title, author, or mood...">
+                </label>
+                <label class="filter-field">
+                    <span class="sr-only">Filter by genre</span>
+                    <select id="genre-filter">
+                        <option value="all">All genres</option>
+                    </select>
+                </label>
+            </div>
+            <div class="book-container" id="search-results"></div>
+            <p class="empty-state" id="empty-state" hidden>No books found in these stacks. Try another search.</p>
+        </section>
+    </main>
+
+    <div class="modal-backdrop" id="book-modal" hidden>
+        <div class="book-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" type="button" aria-label="Close book details">×</button>
+            <div class="modal-content" id="modal-content"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div>
+            <img src="images/logo.png.png" alt="Nocturne Booksellers">
+            <p>For readers who prefer their stories<br>with a little moonlight.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#featured">Browse books</a>
+            <a href="#staff-picks">Staff picks</a>
+            <a href="#search">Search the stacks</a>
+            <a href="#about">About the creator</a>
+        </div>
+        <p class="copyright">© 2026 Nocturne Booksellers</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
